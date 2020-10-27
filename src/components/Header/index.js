@@ -1,17 +1,28 @@
 import React from 'react';
+import {IconContext} from "react-icons";
+import * as FaIcon from 'react-icons/fa';
+import * as FiIcon from 'react-icons/fi';
 
-const Header = () => {
+const Header = props => {
     return (
         <header>
-            <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
-                <div className="navbar-menu">
-                    <div className="navbar-start">
-                        <a href="#!" className="navbar-item">Home</a>
-                        <a href="#!" className="navbar-item">About Us</a>
-                        <a href="#!" className="navbar-item">Contact Us</a>
-                    </div>
+            <div className="columns is-desktop py-1">
+                <div className="column is-size-6 is-half">
+                    <IconContext.Provider value={{ style: {fontSize: '18px' }}}>
+                        <span className="pr-1"><FaIcon.FaPhone /> +91 7003845817</span>
+                        <span className="pl-1"><FaIcon.FaEnvelope /> <a href="mailto:kapat.dip@gmail.com">kapat.dip@gmail.com</a></span>
+                    </IconContext.Provider>
                 </div>
-            </nav>
+
+                <div className="column is-half has-text-right">
+                    <IconContext.Provider value={{ style: {fontSize: '20px'}}}>
+                        <a href="#!" className="px-1"><FaIcon.FaFacebookF /></a>                            
+                        <a href="#!" className="px-1"><FaIcon.FaTwitter /></a>
+                        <a href="#!" className="px-1"><FaIcon.FaInstagram /></a>
+                        <a href="#!" className="px-1"><FaIcon.FaLinkedinIn /></a>
+                    </IconContext.Provider>
+                </div>
+            </div>
         </header>
     );
 }
